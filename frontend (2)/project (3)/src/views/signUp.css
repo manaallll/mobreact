@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: hsl(0, 0%, 95%);
+}
+
+.signup-form {
+    background-color: hsl(0, 0%, 100%);
+    justify-content: center;
+    max-width: 400px;
+    margin: auto;
+    padding-top: 60px;
+    padding-bottom: 1px;
+    padding-left: 20px;
+    padding-right: 80px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px hsla(0, 0%, 0%, 0.3);
+    margin-top: 50px;
+    margin-bottom: 1px;
+}
+
+.containerr {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.signup-form h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-right: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+    flex-basis: 50%;
+    background: #fff;
+}
+
+.signup-form input[type="text"],
+.signup-form textarea,
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    padding: 15px;
+    width: 120%;
+    border: 1px solid rgb(205, 202, 202);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.signup-form input:focus,
+.signup-form textarea:focus {
+    border: 2px solid black;
+    outline: none;
+}
+
+.signbtn {
+    background-color: rgb(212, 175, 55);
+    width: 120%;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signbtn:hover {
+    background-color: black;
+    transform: scale(1.05);
+}
+
+.signbtn:active {
+    transform: scale(0.98);
+    background-color: gray;
+}
+
+.content p {
+    margin-top: 40px;
+    color: grey;
+    text-align: center;
+}
+
+.content a {
+    color: rgb(212, 175, 55);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.content a:hover {
+    color: rgb(212, 175, 55);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#error-mssg {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .signup-form h1 {
+    justify-content: center;
+    margin-left: -50px;
+    margin-bottom: 20px;
+  }
+}

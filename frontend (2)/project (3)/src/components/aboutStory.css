@@ -1,0 +1,64 @@
+.brand-story {
+  padding: 80px 20px;
+  text-align: center;
+  background: white;
+}
+
+.story-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.story-text {
+  max-width: 800px;
+  margin: 1.2rem auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.story-text strong {
+  color: #b49b84; /* elegant gold tone */
+}
+
+.story-text:nth-of-type(1) {
+  animation: fadeUp 1s ease-out;
+}
+.story-text:nth-of-type(2) {
+  animation: fadeUp 1.4s ease-out;
+}
+.story-text:nth-of-type(3) {
+  animation: fadeUp 1.8s ease-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brand-story {
+    padding: 60px 20px;
+  }
+  
+  .story-title {
+    font-size: 2rem;
+  }
+  
+  .story-text {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,152 @@
+.delete-item-page {
+  padding: 40px 20px;
+  min-height: calc(100vh - 60px);
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.delete-container {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  padding: 50px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.delete-header {
+  margin-bottom: 40px;
+}
+
+.delete-title {
+  font-size: 2.5em;
+  color: #dc3545;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.delete-subtitle {
+  color: var(--medium-text);
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.product-preview {
+  background-color: var(--light-gray);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.product-name {
+  font-size: 1.5em;
+  color: var(--dark-text);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.product-price {
+  font-size: 1.3em;
+  color: var(--dark-text);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product-category {
+  color: var(--medium-text);
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+
+.product-description {
+  color: var(--medium-text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.product-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stock-status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.stock-status.in-stock {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.stock-status.out-of-stock {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.product-rating {
+  color: var(--gold-color);
+  font-weight: 600;
+}
+
+.delete-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.warning-icon {
+  font-size: 1.5em;
+  flex-shrink: 0;
+}
+
+.delete-warning p {
+  margin: 0;
+  color: #856404;
+  text-align: left;
+}
+
+.delete-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-cancel {
+  padding: 14px 28px;
+  background-color: var(--light-gray);
+  color: var(--medium-text);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #e8e8e8;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  padding: 14px 28px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+}

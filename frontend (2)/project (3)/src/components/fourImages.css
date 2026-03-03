@@ -1,0 +1,144 @@
+.images-container {
+  display: flex;
+  width: 100vw;
+  min-height: 75vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  flex: 1;
+  width: 50%;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.full-width-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+  padding: 0 5%;
+
+  z-index: 2;
+  text-align: left;
+  width: 40%;
+  left: 5%;
+  transition: opacity 0.3s ease-in-out; /* Added transition for smooth fade */
+}
+
+.description {
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  
+  justify-content: center;
+  margin-top: 370px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out; /* Added transition */
+}
+
+.hover-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  transform: translate(-50%, 12px);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Match timing with text-overlay */
+  z-index: 5;
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 300px;
+}
+
+/* Hide original text and show hover text on hover */
+.image-wrapper:hover .text-overlay .description {
+  opacity: 0; /* Hide original text */
+}
+
+.image-wrapper:hover .hover-caption {
+  opacity: 1; /* Show hover text */
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+/* Responsive adjustments */
+/* ...existing code... */
+
+@media (max-width: 768px) {
+  .images-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 20vh;
+  }
+
+  .text-overlay {
+    width: 80%;
+    left: 10%;
+    padding: 0;
+    top: 20%;
+    transform: none;
+  }
+
+  .overlay-subheading {
+    font-size: 2em;
+  }
+
+  /* show only the first two images on responsive */
+  .images-container .image-wrapper:nth-child(n+3) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-wrapper {
+    height: 20vh;
+  }
+
+  /* ensure only the first two images are visible on small screens */
+  .images-container .image-wrapper:nth-child(n+3) {
+    display: none;
+  }
+
+  .description {
+    font-size: 0.6rem;
+    margin-top: 150px;
+  }
+
+  .hover-caption {
+    font-size: 0.6rem;
+    margin-top: 130px;
+    padding: 4px 8px;
+  }
+
+  .text-overlay {
+    width: 95%;
+    left: 2.5%;
+  }
+}
+
+/* ...existing code... */

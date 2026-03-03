@@ -1,0 +1,276 @@
+:root {
+  --gold-color: rgb(212, 175, 55); /* Your specified gold color */
+  --light-gray: #f5f5f5;
+  --dark-text: #333;
+  --medium-text: #555;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray);
+  color: var(--dark-text);
+}
+ 
+.shop-page {
+  padding: 30px 15px; /* Reduced padding for overall smaller look */
+  max-width: 1100px; /* Max width for the shop page content */
+  margin: 0 auto; /* Center the shop content */
+}
+
+.shop-title {
+  text-align: center;
+  font-size: 2.8em; /* Slightly smaller title */
+  color: var(--dark-text);
+  margin-bottom: 40px; /* Reduced margin */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.shop-grid {
+  display: grid;
+  /* Start with 4 columns for larger screens, but with smaller base card size */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted min-width for smaller cards */
+  gap: 20px; /* Reduced gap */
+  justify-items: center; 
+  align-items: stretch; 
+}
+
+.shop-card {
+  background-color: #fff;
+  border-radius: 5px; /* Slightly smaller border-radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07); /* Lighter shadow */
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Faster transition */
+  display: flex; 
+  flex-direction: column;
+  width: 90%; 
+  max-width: 250px; /* Set a max-width for individual cards to keep them from getting too wide */
+}
+
+.shop-card:hover {
+  transform: translateY(-5px); /* Less dramatic lift */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12); /* Slightly more prominent hover shadow */
+}
+
+.shop-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.shop-card-image-wrapper {
+    width: 100%;
+    /* 
+     * ---  *** CRUCIAL CHANGE HERE *** ---
+     * Reduce padding-top to make the image wrapper shorter (e.g., 75% for 4:3 aspect ratio)
+     */
+    padding-top: 75%; /* Changed from 100% to 75% for a shorter image height */
+    position: relative;
+    background-color:#f5f5f5;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0; 
+}
+
+.shop-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  object-fit: contain; /* This will ensure the image is not cut */
+  border-radius: 10px 10px 0 0; /* Match card border-radius */
+} 
+
+.shop-card-content {
+  padding: 12px; /* Reduced padding */
+  text-align: center;
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.shop-item-name {
+  font-size: 1em; /* Smaller font size for name */
+  color: var(--dark-text);
+  margin-top: 0;
+  margin-bottom: 5px; /* Reduced margin */
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.shop-item-price {
+  font-size: 0.9em; /* Smaller font size for price */
+  color: black;
+  font-weight: 500;
+  margin-bottom: 12px; /* Reduced margin */
+}
+
+.view-item-btn {
+  background-color: var(--gold-color);
+  color: #fff;
+  border: none;
+  padding: 8px 18px; /* Smaller button padding */
+  font-size: 0.85em; /* Smaller button font size */
+  font-weight: 600;
+  border-radius: 40px; /* Slightly smaller border-radius for button */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  margin-top: auto; 
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.2); /* Lighter button shadow */
+}
+
+.view-item-btn:hover {
+  background-color: #c9a532;
+  transform: translateY(-1px); /* Less dramatic hover lift */
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+.view-item-btn:active {
+  transform: translateY(0);
+}
+
+/* Add these styles to your existing shopItem.css */
+
+.shop-actions {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-new-btn {
+  background-color: var(--gold-color);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.add-new-btn:hover {
+  background-color: #c9a532;
+  transform: translateY(-2px);
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.edit-btn, .delete-btn {
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.8em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn {
+  
+  color:black;
+}
+
+.edit-btn:hover {
+  background-color:#d3d3d3;
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+
+  color:black;
+}
+
+.delete-btn:hover {
+  background-color:#FF474C;
+  transform: translateY(-1px);
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--medium-text);
+  margin-top: 50px;
+}
+
+.error {
+  color: #f44336;
+}
+
+/* Responsive adjustments for Shop page */
+/* Default for larger screens will naturally be 4 or 5 columns with minmax(200px, 1fr) */
+
+@media (max-width: 992px) { /* Tablet/smaller desktop */
+  .shop-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Still flexible, but targeting smaller screens */
+    gap: 18px;
+  }
+  .shop-card {
+      max-width: 220px; /* Slightly smaller max-width */
+  }
+  .shop-title {
+    font-size: 2.5em;
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 768px) { /* Small tablet/larger phone - TWO COLUMNS */
+  .shop-page {
+    padding: 25px 10px;
+  }
+  .shop-title {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr); /* FORCES TWO COLUMNS */
+    gap: 15px;
+  }
+  .shop-card {
+      max-width: 100%; /* Let the grid columns define width */
+      height: auto; /* Allow height to adjust based on content */
+  }
+  .shop-item-name {
+      font-size: 0.95em;
+  }
+  .shop-item-price {
+      font-size: 0.85em;
+  }
+  .view-item-btn {
+      padding: 7px 15px;
+      font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) { /* Very small phone - SINGLE COLUMN */
+  .shop-page {
+    padding: 20px 5px;
+  }
+  .shop-title {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+  }
+  .shop-grid {
+    grid-template-columns: 1fr; /* SINGLE COLUMN */
+    gap: 15px;
+  }
+  .shop-card {
+      max-width: 250px; /* Keep it from being too wide */
+      margin: 0 auto; /* Center the single card */
+  }
+}

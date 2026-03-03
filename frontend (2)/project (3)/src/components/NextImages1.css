@@ -1,0 +1,145 @@
+.images-container {
+  display: flex;
+  width: 100vw;
+  /* Set a minimum height for the container to control the overall height of the banners */
+  min-height: 75vh; /* Increased height - adjust as needed (e.g., 70vh, 80vh) */
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.image-wrapper {
+  position: relative;
+  flex: 1;
+  width: 50%; /* Each wrapper takes 50% */
+  overflow: hidden;
+  /* Add transition for hover effect on the entire wrapper */
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05); /* Scales up the entire wrapper (image and text) */
+}
+
+
+.full-width-image {
+  width: 100%; /* Image fills its wrapper */
+  height: 100%; /* Make image take full height of the wrapper */
+  display: block;
+  object-fit: cover; /* Ensures image covers the area, cropping if necessary */
+  /* Remove hover here, as we're applying it to the wrapper for combined effect */
+}
+
+/* Original hover was on image only, but we want wrapper to scale all contents */
+/* .full-width-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+} */
+
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Keeps text vertically centered */
+  color: black; /* Changed to black as requested */
+  padding: 0 5%;
+  /* Adjusted text-shadow for better readability with black text on potentially light images */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Light shadow for black text */
+  z-index: 2;
+  text-align: left;
+  width: 40%;
+  left: 5%;
+  /* Add transition for text elements if they were to scale independently, but here wrapper handles it */
+  /* transition: transform 0.5s ease-in-out; */
+}
+
+/* If you wanted text to scale *more* or *differently* on hover of wrapper:
+.image-wrapper:hover .text-overlay {
+    transform: translateY(-50%) scale(1.08); // Scales text slightly more, for example
+}
+*/
+
+.overlay-heading {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.overlay-subheading {
+  font-size: 2.5em;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.overlay-description {
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.overlay-button {
+  background: transparent;
+  color: black; /* Button text color changed to black */
+  border: 2px solid white;
+  background-color: white; /* Button border color changed to black */
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s ease; /* Added transform to transition */
+}
+
+.overlay-button:hover {
+  background-color: rgb(212,175,55); /* On hover, background becomes black */
+  color: white; /* On hover, text becomes white */
+  transform: scale(1.05); /* Button itself scales up slightly on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .images-container {
+    flex-direction: column;
+    min-height: auto; /* Remove fixed height when stacked */
+  }
+
+  .image-wrapper {
+    width: 100%;
+    /* On smaller screens, individual image height might be needed */
+    height: 50vh; /* Give each image wrapper a reasonable height when stacked */
+  }
+
+  .text-overlay {
+    width: 80%;
+    left: 10%;
+    padding: 0;
+    top: 20%; /* Adjusted top position for better visibility when stacked */
+    transform: none; /* Remove translateY for simpler positioning */
+  }
+
+  .overlay-subheading {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-heading {
+    font-size: 1em;
+  }
+  .overlay-subheading {
+    font-size: 1.8em;
+  }
+  .overlay-description {
+    font-size: 0.8em;
+  }
+  .overlay-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+  .image-wrapper {
+    height: 40vh; /* Adjust height further for very small screens */
+  }
+}

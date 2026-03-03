@@ -1,0 +1,132 @@
+/* Container styles */
+.image-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 3000px;
+  height: 650px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Image slide styles */
+.image-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Text overlay container styles */
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  text-align: left;
+  padding: 0;
+  z-index: 2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 500px;
+  margin-left: -100px;
+}
+
+/* Title styles - Made smaller */
+.slide-title {
+  font-size: 1.5rem; 
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  text-align: left;
+}
+
+/* Subtitle styles - Made bigger and changed font */
+.slide-subtitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  text-align: left;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.2;
+}
+
+/* Description styles */
+.slide-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  white-space: pre-line;
+  width: 100%;
+  text-align: left;
+}
+
+/* CTA button styles */
+.cta-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .text-container {
+    left: 5%;
+    max-width: 90%;
+    margin-left: 0;
+  }
+
+  .slide-title {
+    font-size: 1.2rem;
+    margin-left: -2px;
+  }
+
+  .slide-subtitle {
+    font-size: 2rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  .slide-description {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-title {
+    font-size: 1rem;
+  }
+
+  .slide-subtitle {
+    font-size: 1.5rem;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  .slide-description {
+    font-size: 0.9rem;
+  }
+}

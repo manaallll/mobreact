@@ -1,0 +1,152 @@
+.hero {
+    background: url('makeup-bg.jpg') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(248, 245, 245, 0.85);
+    backdrop-filter: blur(2px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Hero Text Animations */
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: heroTitleEnter 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    color: #333;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroSubtitleEnter 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Simple hero text container (no cycling) */
+.hero-text {
+    margin-bottom: 2rem;
+}
+
+/* Enhanced Keyframes */
+@keyframes heroTitleEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes heroSubtitleEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Hover effects for interactive elements */
+.hero-cta {
+    opacity: 0;
+    animation: fadeInScale 1s ease-out 1s forwards;
+    display: inline-block;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #d4af37, #f4d03f);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(0.9);
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.hero-cta:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(135deg, #f4d03f, #d4af37);
+}
+
+/* Background subtle animation */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: shimmer 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+        margin-left: 10px;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}

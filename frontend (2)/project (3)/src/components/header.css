@@ -1,0 +1,290 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 1rem;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0.5rem 0;
+  color: #111;
+}
+
+/* Desktop nav under title */
+nav.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  width: 100%;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 18px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: rgb(212, 175, 55);
+  transition: transform 0.2s, color 0.3s;
+  transform: scale(1.1);
+}
+
+/* Icons on right side (desktop) */
+.nav-icons {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  right: 2rem;
+  margin-top: 15px;
+}
+
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: transform 0.2s, color 0.3s;
+  color: #111;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+  color: rgb(212, 175, 55);
+}
+
+/* Search Bar Styles */
+
+/* Search Icon for Mobile */
+/* Search Icon for Mobile */
+.search-icon-mobile {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #111;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s, color 0.3s;
+}
+
+.search-icon-mobile:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: rgb(212, 175, 55);
+}
+
+/* Search Icon for Desktop (inside nav-icons) */
+.search-icon-desktop {
+  display: block;
+}
+
+.header-search-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #eee;
+  z-index: 1000;
+}
+
+.header-search-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.header-search-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+.header-search-form input:focus {
+  border-color: #d4af37;
+}
+
+.header-search-form button[type="submit"] {
+  padding: 0.75rem 1.5rem;
+  background: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.header-search-form button[type="submit"]:hover {
+  background: #b8941f;
+}
+
+.search-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.search-close:hover {
+  color: #333;
+}
+
+
+.menu-toggle {
+  position: absolute;
+  left: 1rem;
+  top: 1.5rem;
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  z-index: 200;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  background: #111;
+  border-radius: 2px;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* =======================
+   Responsive (Mobile)
+======================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+  }
+
+  h1 {
+    margin-left: 50px;
+    margin-top: 3px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Show search icon in header on mobile */
+  .search-icon-mobile {
+    display: block;
+  }
+   .search-icon-desktop {
+    display: none;
+  }
+
+  /* Hide desktop nav */
+  nav.sidebar {
+    display: none;
+  }
+
+  /* Sidebar when open */
+  nav.sidebar.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 240px;
+    background: #fff;
+    padding-top: 5rem;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease forwards;
+    z-index: 99;
+  }
+
+  /* Stack links vertically */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: -30px;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  /* Icons below links (mobile) - Remove search icon from here */
+  .nav-icons {
+    position: static;
+    display: flex;
+    justify-content: space-around;
+    margin-left: -130px;
+    margin-top: 5rem;
+    padding: 0 1rem;
+  }
+
+  /* Transform hamburger into X */
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+/* Animation for sidebar */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
